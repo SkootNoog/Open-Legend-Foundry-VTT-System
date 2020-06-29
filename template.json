@@ -2,6 +2,11 @@
 "Actor": {
   "types": ["character"],
   "character": {
+    "archetype": "",
+    "player": "",
+    "level": 1,
+    "xp": 0,
+    "description": "",
     "biography": "",
     "health": {
       "value": 10,
@@ -13,7 +18,62 @@
       "min": 0,
       "max": 5
     },
-    "attributes": {}
+    "attributes": {
+      "agility": 0,
+      "fortitude": 0,
+      "might": 0,
+      "deception": 0,
+      "presence": 0,
+      "persuasion": 0,
+      "learning": 0,
+      "logic": 0,
+      "perception": 0,
+      "will": 0,
+      "alteration": 0,
+      "creation": 0,
+      "energy": 0,
+      "entropy": 0,
+      "influence": 0,
+      "movement": 0,
+      "prescience": 0,
+      "protection": 0
+    },
+    "defenses": {
+      "guard": {
+        "value": 0,
+        "label": "Guard",
+        "modifier": []
+      },
+      "toughness": {
+        "other": 0,
+      },
+      "resolve": {
+        "other": 0,
+      },
+      "armor": 0,
+      "guardOther": 0,
+      "toughOther": 0,
+      "resolveOther": 0
+    },
+    "actions": {
+      "name": "",
+      "attribute": {},
+      "target": "",
+      "special": ""
+    },
+    "feats": {
+
+    },
+    "legendpoints": 0,
+    "speed": {
+
+    },
+    "perks": {
+
+    },
+    "flaws": {
+
+    }
   }
 },
 "Item": {

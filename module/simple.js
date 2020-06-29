@@ -8,6 +8,7 @@
 import { SimpleActor } from "./actor.js";
 import { SimpleItemSheet } from "./item-sheet.js";
 import { SimpleActorSheet } from "./actor-sheet.js";
+import { ActorDefense } from "./actor-defense.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
