@@ -8,8 +8,7 @@ export  class  ActorDefense  extends  Actor {
 	const  data = actorData.data;
 
 	if (actorData.type === "character") {
-		data.defense.guard.value = Number(attribute.agility.value) + Number(attribute.might.value);
-		data.defense.value = Number(attr.agility.value)+Number(attr.dodge.value);
+		data.defense.guard.value = Number(attr.agility.value)+Number(attr.dodge.value)+Number(data.defense.);
 	}
 
 }
