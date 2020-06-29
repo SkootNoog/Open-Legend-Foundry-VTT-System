@@ -5,10 +5,9 @@
  */
 
 // Import Modules
-import { SimpleActor } from "./actor.js";
 import { SimpleItemSheet } from "./item-sheet.js";
 import { SimpleActorSheet } from "./actor-sheet.js";
-import { ActorDefense } from "./actor-defense.js";
+import { ActorOL } from "./actor-openlegend.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -27,7 +26,7 @@ Hooks.once("init", async function() {
   };
 
 	// Define custom Entity classes
-  CONFIG.Actor.entityClass = SimpleActor;
+  CONFIG.Actor.entityClass = ActorOL;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
