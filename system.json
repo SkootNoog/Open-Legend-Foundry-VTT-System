@@ -16,7 +16,7 @@
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
   "url": "https://bitbucket.org/burritosupreme/openlegend/",
-  "manifest": "https://bitbucket.org/burritosupreme/openlegend/src/master/system.json",
+  "manifest": "https://bitbucket.org/burritosupreme/openlegend/raw/4e41dbfff19d0ae9fedbd0b8829171c0dbfe7f22/system.json",
   "download": "https://bitbucket.org/burritosupreme/openlegend/get/master.zip",
   "license": "LICENSE.txt"
 }
