@@ -19,24 +19,78 @@
       "max": 5
     },
     "attributes": {
-      "agility": 0,
-      "fortitude": 0,
-      "might": 0,
-      "deception": 0,
-      "presence": 0,
-      "persuasion": 0,
-      "learning": 0,
-      "logic": 0,
-      "perception": 0,
-      "will": 0,
-      "alteration": 0,
-      "creation": 0,
-      "energy": 0,
-      "entropy": 0,
-      "influence": 0,
-      "movement": 0,
-      "prescience": 0,
-      "protection": 0
+      "agility": {
+        "value": 0,
+        "label": "Agility"
+      },
+      "fortitude": {
+        "value": 0,
+        "label": "Fortitude"
+      },
+      "might": {
+        "value": 0,
+        "label": "Might"
+      },
+      "learning": {
+        "value": 0,
+        "label": "Learning"
+      },
+      "logic": {
+        "value": 0,
+        "label": "Logic"
+      },
+      "perception": {
+        "value": 0,
+        "label": "Perception"
+      },
+      "will": {
+        "value": 0,
+        "label": "Will"
+      },
+      "deception": {
+        "value": 0,
+        "label": "Deception"
+      },
+      "presence": {
+        "value": 0,
+        "label": "Presence"
+      },
+      "persuasion": {
+        "value": 0,
+        "label": "Persuasion"
+      },
+      "alteration": {
+        "value": 0,
+        "label": "Alteration"
+      },
+      "creation": {
+        "value": 0,
+        "label": "Creation"
+      },
+      "energy": {
+        "value": 0,
+        "label": "Energy"
+      },
+      "entropy": {
+        "value": 0,
+        "label": "Entropy"
+      },
+      "influence": {
+        "value": 0,
+        "label": "Influence"
+      },
+      "movement": {
+        "value": 0,
+        "label": "Movement"
+      },
+      "prescience": {
+        "value": 0,
+        "label": "Prescience"
+      },
+      "protection": {
+        "value": 0,
+        "label": "Protection"
+      }
     },
     "defenses": {
       "guard": {
