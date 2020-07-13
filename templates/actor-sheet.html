@@ -59,8 +59,16 @@
                 <a class="attribute-control" data-action="create"><i class="fas fa-plus"></i></a>
             </header>
 
-            <label class="attribute-label"> Agility: </label>
-            <input type="text" name="data.attributes.agility.value" value="{{data.attributes.agility.value}}" data-dtype="Number"/>
+            <ol class="attribute-list">
+                <li class="attribute-flexrow" data-attribute="">
+                    <span class="attribute-label flexrow" name="data.attributes..label"></span>
+                    <div class="attribute-editbox flexrow">
+                        <input class="attribute-value" type="text" name="data.attributes..value" value="" data-dtype="Number" />
+                    </div>
+                </li>
+            </ol>
+
+
 
             
         </div>
