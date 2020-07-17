@@ -25,29 +25,30 @@ export  class  ActorOL  extends  Actor {
 	}
 
 	getRolldata(attributeValue){
+		//TODO: maybe see if we can do advantage and disadvantage
 		switch (attributeValue){
 			case 1:
-				return "1d20+1d4";
+				return "1d20x20+1d4x4";
 			case 2:
-				return "1d20+1d6";
+				return "1d20x20+1d6x6";
 			case 3:
-				return "1d20+1d8";
+				return "1d20x20+1d8x8";
 			case 4:
-				return "1d20+1d10";
+				return "1d20x20+1d10x10";
 			case 5:
-				return "1d20+2d6";
+				return "1d20x20+2d6x6";
 			case 6:
-				return "1d20+2d8";
+				return "1d20x20+2d8x8";
 			case 7:
-				return "1d20+2d10";
+				return "1d20x20+2d10x10";
 			case 8:
-				return "1d20+3d8";
+				return "1d20x20+3d8x8";
 			case 9:
-				return "1d20+3d10";
+				return "1d20x20+3d10x10";
 			case 10:
-				return "1d20+4d8";
+				return "1d20x20+4d8x8";
 			default:
-				return "1d20";
+				return "1d20x20";
 		}
 	}
 }
