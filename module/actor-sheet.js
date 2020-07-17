@@ -10,7 +10,7 @@ export class SimpleActorSheet extends ActorSheet {
   	  classes: ["worldbuilding", "sheet", "actor"],
   	  template: "systems/openlegend/templates/actor-sheet.html",
       width: 600,
-      height: 600,
+      height: 800,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
       dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
     });

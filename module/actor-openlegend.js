@@ -8,8 +8,46 @@ export  class  ActorOL  extends  Actor {
 		const data = actorData.data;
 
 		if (actorData.type === "character") {
+			this.prepareCharData(actorData);
 			// data.defense.guard.value = Number(attr.agility.value) + Number(attr.dodge.value) + Number(data.defense.armor.value) + Number(data.defense.guardOther.value);
 		}
 
+	}
+
+	prepareCharData(actorData){
+		const data = actorData.data;
+
+		// Loop through attribute scores, and add their modifiers to our sheet output.
+		for (let [key, attribute] of Object.entries(data.attributes)) {
+			// Calculate the modifier using d20 rules.
+			attribute.roll = this.getRolldata(attribute.value);
+		}
+	}
+
+	getRolldata(attributeValue){
+		switch (attributeValue){
+			case 1:
+				return "1d20+1d4";
+			case 2:
+				return "1d20+1d6";
+			case 3:
+				return "1d20+1d8";
+			case 4:
+				return "1d20+1d10";
+			case 5:
+				return "1d20+2d6";
+			case 6:
+				return "1d20+2d8";
+			case 7:
+				return "1d20+2d10";
+			case 8:
+				return "1d20+3d8";
+			case 9:
+				return "1d20+3d10";
+			case 10:
+				return "1d20+4d8";
+			default:
+				return "1d20";
+		}
 	}
 }
