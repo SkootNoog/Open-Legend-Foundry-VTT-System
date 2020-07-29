@@ -20,18 +20,38 @@
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="description">Description</a>
-        <a class="item" data-tab="items">Items</a>
         <a class="item" data-tab="attributes">Attributes</a>
+        <a class="item" data-tab="items">Items</a>
+        <a class="item" data-tab="description">Description</a>
     </nav>
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
 
-        {{!-- Biography Tab --}}
-        <div class="tab biography" data-group="primary" data-tab="description">
-            {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
+        {{!-- Attributes Tab --}}
+        <div class="tab attributes" data-group="primary" data-tab="attributes">
+            <header class="attributes-header flexrow">
+                <span class="attribute-key">Attributes</span>
+                <span class="attribute-value">Value</span>
+                <span class="attribute-label">Roll</span>
+                <a class="attribute-control" data-action="create"><i class="fas fa-plus"></i></a>
+            </header>
+
+            <div class="attributes flex-group-left">
+                {{#each data.attributes as |attribute key|}}
+                <div class="attribute flexrow flex-group-center">
+                    <label for="data.attributes.{{key}}.value" class="resource-label">{{attribute.label}}</label>
+                    <input type="text" name="data.attributes.{{key}}.value" value="{{attribute.value}}" data-dtype="Number"/>
+                    <button class="attribute-roll rollable" data-roll="{{attribute.value}}" data-label="{{attribute.label}}">Roll {{attribute.label}}</button>
+                </div>
+                {{/each}}
+            </div>
+
+
+
+
         </div>
+
 
         {{!-- Owned Items Tab --}}
         <div class="tab items" data-group="primary" data-tab="items">
@@ -49,29 +69,10 @@
             </ol>
         </div>
 
-        {{!-- Attributes Tab --}}
-        <div class="tab attributes" data-group="primary" data-tab="attributes">
-            <header class="attributes-header flexrow">
-                <span class="attribute-key">Attribute Key</span>
-                <span class="attribute-value">Value</span>
-                <span class="attribute-label">Label</span>
-                <span class="attribute-dtype">Data Type</span>
-                <a class="attribute-control" data-action="create"><i class="fas fa-plus"></i></a>
-            </header>
 
-            <div class="attributes flex-group-left">
-                {{#each data.attributes as |attribute key|}}
-                <div class="attribute flexrow flex-group-center">
-                    <label for="data.attributes.{{key}}.value" class="resource-label">{{attribute.label}}</label>
-                    <input type="text" name="data.attributes.{{key}}.value" value="{{attribute.value}}" data-dtype="Number"/>
-                    <span class="attribute-roll rollable" data-roll="@attributes.{{key}}.roll" data-label="{{key}}">{{attribute.roll}}</span>
-                </div>
-                {{/each}}
-            </div>
-
-
-
-            
+        {{!-- Biography Tab --}}
+        <div class="tab biography" data-group="primary" data-tab="description">
+            {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
         </div>
     </section>
 </form>

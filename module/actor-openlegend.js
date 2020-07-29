@@ -14,6 +14,7 @@ export  class  ActorOL  extends  Actor {
 
 	}
 
+	// TODO: Figure out if this is needed
 	prepareCharData(actorData){
 		const data = actorData.data;
 
@@ -25,7 +26,7 @@ export  class  ActorOL  extends  Actor {
 	}
 
 	getRolldata(attributeValue){
-		//TODO: maybe see if we can do advantage and disadvantage
+		//TODO: Figure out if this is needed
 		switch (attributeValue){
 			case 1:
 				return "1d20x20+1d4x4";
