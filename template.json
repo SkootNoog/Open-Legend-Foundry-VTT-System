@@ -99,10 +99,14 @@
         "modifier": []
       },
       "toughness": {
-        "other": 0
+        "value": 0,
+        "label": "Toughness",
+        "modifier": []
       },
       "resolve": {
-        "other": 0
+        "value": 0,
+        "label": "Resolve",
+        "modifier": []
       },
       "armor": 0,
       "guardOther": 0,

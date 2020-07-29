@@ -96,6 +96,11 @@
 .worldbuilding .item-list .item-controls {
   flex: 0 0 36px;
 }
+
+.worldbuilding .sheet-header {
+  height: 190px;
+}
+
 .worldbuilding .attributes-header {
   padding: 5px;
   margin: 5px 0;

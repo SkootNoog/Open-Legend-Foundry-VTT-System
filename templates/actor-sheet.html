@@ -4,16 +4,25 @@
     <header class="sheet-header">
         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
         <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-            <div class="resource">
-                <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number"/>
-                <span> / </span>
-                <input type="text" name="data.health.max" value="{{data.health.max}}" data-dtype="Number"/>
+            <div class="header-details flexrow">
+                <h4 class="charname">Name<input name="name" type="text" value="{{actor.name}}" size="5" placeholder="Name"/></h4>
+                <h4 class="chararchetype">Archetype<input name="data.archetype" type="text" value="{{data.archetype}}" size="5" placeholder="Archetype"/></h4>
             </div>
-            <div class="resource">
-                <input type="text" name="data.power.value" value="{{data.power.value}}" data-dtype="Number"/>
-                <span> / </span>
-                <input type="text" name="data.power.max" value="{{data.power.max}}" data-dtype="Number"/>
+            <div class="header-details flexrow">
+                <h4 class="playername">Player<input name="data.player" type="text" value="{{data.player}}" size="5" placeholder="Player"/></h4>
+                <h4 class="level">Level<input name="data.level" type="text" value="{{data.level}}" size="3" placeholder="level"/></h4>
+                <h4 class="xp">XP<input name="data.xp" type="text" value="{{data.xp}}" size="3" placeholder="xp"/></h4>
+            </div>
+            <div class="header-details flexrow">
+                <h4 class="description">Description<input name="data.description" type="text" value="{{data.description}}" placeholder="Description"/></h4>
+            </div>
+
+            <div class="resource flexrow">
+                <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number"/>
+                <span> / {{data.derived.health.max}}</span>
+                <span>Guard: {{data.defenses.guard.value}}</span>
+                <span>Toughness: {{data.defenses.toughness.value}}</span>
+                <span>Resolve: {{data.defenses.resolve.value}}</span>
             </div>
         </div>
     </header>
@@ -23,6 +32,7 @@
         <a class="item" data-tab="attributes">Attributes</a>
         <a class="item" data-tab="items">Items</a>
         <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="settings">Settings</a>
     </nav>
 
     {{!-- Sheet Body --}}
@@ -30,12 +40,12 @@
 
         {{!-- Attributes Tab --}}
         <div class="tab attributes" data-group="primary" data-tab="attributes">
-            <header class="attributes-header flexrow">
-                <span class="attribute-key">Attributes</span>
-                <span class="attribute-value">Value</span>
-                <span class="attribute-label">Roll</span>
-                <a class="attribute-control" data-action="create"><i class="fas fa-plus"></i></a>
-            </header>
+<!--            <header class="attributes-header flexrow">-->
+<!--                <span class="attribute-key">Attributes</span>-->
+<!--                <span class="attribute-value">Value</span>-->
+<!--                <span class="attribute-label">Roll</span>-->
+<!--                <a class="attribute-control" data-action="create"><i class="fas fa-plus"></i></a>-->
+<!--            </header>-->
 
             <div class="attributes flex-group-left">
                 {{#each data.attributes as |attribute key|}}
@@ -73,6 +83,12 @@
         {{!-- Biography Tab --}}
         <div class="tab biography" data-group="primary" data-tab="description">
             {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
+        </div>
+
+
+        {{!-- Biography Tab --}}
+        <div class="tab settings" data-group="primary" data-tab="settings">
+<!--            TODO: Add settings here. Checkboxes for feats and other shizzzzzzzzz-->
         </div>
     </section>
 </form>

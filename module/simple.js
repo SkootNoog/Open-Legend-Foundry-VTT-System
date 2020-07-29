@@ -14,7 +14,7 @@ import { ActorOL } from "./actor-openlegend.js";
 /* -------------------------------------------- */
 
 Hooks.once("init", async function() {
-  console.log(`Initializing Simple Worldbuilding System`);
+  console.log(`Initializing Open Legend System`);
 
 	/**
 	 * Set an initiative formula for the system

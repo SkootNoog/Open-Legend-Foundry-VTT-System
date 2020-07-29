@@ -8,8 +8,13 @@ export  class  ActorOL  extends  Actor {
 		const data = actorData.data;
 
 		if (actorData.type === "character") {
+
 			this.prepareCharData(actorData);
-			// data.defense.guard.value = Number(attr.agility.value) + Number(attr.dodge.value) + Number(data.defense.armor.value) + Number(data.defense.guardOther.value);
+			data.defenses.guard.value = Number(data.attributes.agility.value) + Number(data.attributes.might.value) + Number(data.defenses.armor) + Number(data.defenses.guardOther) +10;
+			data.defenses.toughness.value = Number(data.attributes.fortitude.value) + Number(data.attributes.will.value) + Number(data.defenses.toughOther) + 10;
+			data.defenses.resolve.value = Number(data.attributes.presence.value) + Number(data.attributes.will.value) + Number(data.defenses.resolveOther) + 10;
+
+			data.derived.health.max = 2*(Number(data.attributes.fortitude.value) + Number(data.attributes.will.value) + Number(data.attributes.presence.value)) + 10;
 		}
 
 	}
