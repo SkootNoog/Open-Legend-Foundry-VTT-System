@@ -56,7 +56,7 @@ export class SimpleActorSheet extends ActorSheet {
   /**
    * Handle clickable rolls.
    * @param {Event} event   The originating click event
-   * @private
+   *
    */
   async onRoll(event) {
     event.preventDefault();
@@ -76,6 +76,12 @@ export class SimpleActorSheet extends ActorSheet {
   }
 
   //TODO: Clean this up someday. Maybe. Eventually.
+  /**
+   * checkAdvantage will create a dialog box that lets user enter advantage/disadvantage and the number of dice.
+   * @param attributeValue - Attribute score
+   * @param actorData - Actor Data
+   * @returns {Promise<Roll>} - Returns a Roll object with the correct formula
+   */
   async checkAdvantage(attributeValue, actorData){
     let adv = true;
     let advAmount = 0;
@@ -121,34 +127,51 @@ export class SimpleActorSheet extends ActorSheet {
       }).render(true);
     });
 
-
+    // No Advantage/Disadvantage dice less than 0
     if(parseInt(advAmount) < 0){
       advAmount = 0;
     }
 
+    // Get Roll formula depending on Advantage/Disadvantage
 
+    // Attribute 0 && No advantage/disadvantage
     if(parseInt(attributeValue) === 0 && adv === null){
       return new Roll("1d20x20", actorData)
     }
+    // Attribute 0 && Advantage
     else if(parseInt(attributeValue) === 0 && adv === true){
       return new Roll("2d20x20kh", actorData)
     }
+    // Attribute 0 && Disadvantage
     else if(parseInt(attributeValue) === 0 && adv === false){
       return new Roll("2d20x20kl", actorData)
     }
+    // Attribute 1 or higher and disadvantage or advantage
     else {
       return new Roll("1d20x20+" + this.getRolldata(attributeValue, advAmount, adv), actorData)
     }
   }
 
+  /**
+   * getRolldata will create a roll formula for a stat greater than 0
+   * @param attributeValue - Attribute score
+   * @param advAmount - Number of advantage/disadvantage dice
+   * @param adv - True = Advantage, False = Disadvantage
+   * @returns {string}  containing roll formula
+   */
   getRolldata(attributeValue, advAmount, adv){
     let dice = parseInt(advAmount);
     let moreDice = 'kl';
 
-    if (adv){
+    if (adv === true){
       moreDice = 'kh';
     }
+    // If no advantage/disadvantage, set the dice to 0.
+    else if (adv === null){
+      dice = 0;
+    }
 
+    // Create dice formula depending on attribute score
     switch (parseInt(attributeValue)){
       case 1:
         dice += 1;
@@ -181,17 +204,10 @@ export class SimpleActorSheet extends ActorSheet {
         dice += 4;
         return (dice.toString() + "d8" + moreDice + '4x8');
       default:
+        // Thanks to https://github.com/Sieabah for cleaning this part up.
         dice = Math.floor(attributeValue/2) - 1;
         const multiplier = attributeValue%2 === 0 ? 8 : 10;
         return `${dice+(+advAmount)}d${multiplier}${moreDice + dice}x${multiplier}`;
-
-        // dice = Math.floor(attributeValue/2) - 1;
-        // if( attributeValue%2 === 0){
-        //   return ((dice + parseInt(advAmount)).toString() + "d8" + moreDice + dice + 'x8');
-        // }
-        // else{
-        //   return ((dice + parseInt(advAmount)).toString() + "d10" + moreDice + dice + 'x10');
-        // }
     }
   }
 
