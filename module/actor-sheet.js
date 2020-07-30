@@ -77,7 +77,7 @@ export class SimpleActorSheet extends ActorSheet {
 
   //TODO: Clean this up someday. Maybe. Eventually.
   async checkAdvantage(attributeValue, actorData){
-    let adv = false;
+    let adv = true;
     let advAmount = 0;
 
     [adv, advAmount] = await new Promise((resolve, reject) => {
@@ -104,10 +104,18 @@ export class SimpleActorSheet extends ActorSheet {
               ]);
             },
           },
+          neither: {
+            icon: '<i class="fas fa-times"></i>',
+            label: "Neither",
+            callback: (html) => {
+              resolve([null, html.find('.advantage-prompt.dialog [name="advantageDice"]')[0].value
+              ]);
+            },
+          },
         },
-        default: "advantage",
+        default: "neither",
         close: (html) => {
-          resolve([true, html.find('.advantage-prompt.dialog [name="advantageDice"]')[0].value
+          resolve([null, html.find('.advantage-prompt.dialog [name="advantageDice"]')[0].value
           ]);
         }
       }).render(true);
@@ -118,7 +126,11 @@ export class SimpleActorSheet extends ActorSheet {
       advAmount = 0;
     }
 
-    if(parseInt(attributeValue) === 0 && adv === true){
+
+    if(parseInt(attributeValue) === 0 && adv === null){
+      return new Roll("1d20x20", actorData)
+    }
+    else if(parseInt(attributeValue) === 0 && adv === true){
       return new Roll("2d20x20kh", actorData)
     }
     else if(parseInt(attributeValue) === 0 && adv === false){
