@@ -15,8 +15,8 @@
   "gridUnits": "ft",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
-  "url": "https://bitbucket.org/burritosupreme/openlegend/",
-  "manifest": "https://bitbucket.org/burritosupreme/openlegend/raw/4e41dbfff19d0ae9fedbd0b8829171c0dbfe7f22/system.json",
-  "download": "https://bitbucket.org/burritosupreme/openlegend/get/65d3af86a720.zip",
+  "url": "https://github.com/SkootNoog/Open-Legend-Foundry-VTT-System",
+  "manifest": "https://raw.githubusercontent.com/SkootNoog/Open-Legend-Foundry-VTT-System/master/system.json",
+  "download": "https://github.com/SkootNoog/Open-Legend-Foundry-VTT-System/archive/master.zip",
   "license": "LICENSE.txt"
 }
