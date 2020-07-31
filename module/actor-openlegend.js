@@ -9,6 +9,7 @@ export  class  ActorOL  extends  Actor {
 
 		if (actorData.type === "character") {
 
+			// TODO: Properly set up and work with derived values
 			this.prepareCharData(actorData);
 			data.defenses.guard.value = Number(data.attributes.agility.value) + Number(data.attributes.might.value) + Number(data.defenses.armor) + Number(data.defenses.guardOther) +10;
 			data.defenses.toughness.value = Number(data.attributes.fortitude.value) + Number(data.attributes.will.value) + Number(data.defenses.toughOther) + 10;

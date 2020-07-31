@@ -94,17 +94,17 @@
     },
     "defenses": {
       "guard": {
-        "value": 0,
+        "value": 10,
         "label": "Guard",
         "modifier": []
       },
       "toughness": {
-        "value": 0,
+        "value": 10,
         "label": "Toughness",
         "modifier": []
       },
       "resolve": {
-        "value": 0,
+        "value": 10,
         "label": "Resolve",
         "modifier": []
       },
@@ -124,8 +124,9 @@
     },
     "legendpoints": 0,
     "speed": {
-
+      "value": 0
     },
+    "wealthlevel": 1,
     "perks": {
 
     },

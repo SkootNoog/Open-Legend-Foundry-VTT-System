@@ -9,7 +9,7 @@
   overflow-y: hidden;
 }
 .worldbuilding .sheet-header {
-  height: 100px;
+  height: 140px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -18,8 +18,8 @@
   margin-bottom: 10px;
 }
 .worldbuilding .sheet-header .profile-img {
-  flex: 0 0 100px;
-  height: 100px;
+  flex: 0 0 140px;
+  height: 140px;
   margin-right: 10px;
 }
 .worldbuilding .sheet-header .header-fields {
@@ -49,12 +49,13 @@
   height: 28px;
 }
 .worldbuilding .tabs {
-  height: 40px;
+
   border-top: 1px solid #AAA;
   border-bottom: 1px solid #AAA;
 }
 .worldbuilding .tabs .item {
-  line-height: 40px;
+  font-size: 16px;
+  line-height: 30px;
   font-weight: bold;
 }
 .worldbuilding .tabs .item.active {
@@ -95,10 +96,6 @@
 }
 .worldbuilding .item-list .item-controls {
   flex: 0 0 36px;
-}
-
-.worldbuilding .sheet-header {
-  height: 190px;
 }
 
 .worldbuilding .attributes-header {
@@ -144,3 +141,45 @@
   min-width: 460px;
   min-height: 400px;
 }
+
+/*Custom CSS*/
+
+
+.worldbuilding .sheet-header h4 {
+  padding: 0px;
+  border-bottom: 0;
+  font-size: 14px;
+}
+.worldbuilding .attributes .attribute {
+  border: 1px solid #AAA;
+  max-width: 355px;
+}
+.worldbuilding .attributes .resource-label {
+  padding-top: 10px;
+  padding-left: 1px;
+  min-width: 70px;
+  max-width: 100px;
+}
+.worldbuilding .attributes .attribute-input {
+  margin-top: 1px;
+  min-height: 35px;
+  min-width: 20px;
+  max-width: 80px;
+}
+.worldbuilding .attributes .attribute-roll {
+  min-width: 130px;
+  max-width: 175px;
+}
+.worldbuilding .attributes .health-label{
+  white-space: nowrap;
+
+}
+.worldbuilding .attributes .health{
+  max-width: 50px;
+  font-size: 16px;
+}
+
+.worldbuilding .attributes .attribute-hpdef{
+  max-height: 200px;
+}
+
